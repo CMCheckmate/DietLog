@@ -1,0 +1,638 @@
+@keyframes Fade {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+body {
+    background-image: linear-gradient(to bottom, #FFDFA5, #997E4F);
+    margin: 0px;
+}
+
+/* Wrapper */
+.Main  {
+    display: grid;
+    grid-template-rows: 0.25fr 0.1fr 0.25fr 0.25fr 1fr 1fr 2fr 0.5fr;
+    
+    min-width: 100vh;
+    min-height: 100vh;
+}
+
+.Header {
+    display: grid;
+    background-color: #3d2f1f;
+    padding: 0% 5%;
+}
+.Logo {
+    display: grid;
+    grid-template-columns: 0.1fr 0.2fr;
+    margin: auto;
+}
+.Logo > a {
+    font-size: 300%;
+    color: #dbcbb8;
+}
+#logo {
+    margin: auto;
+}
+#title {
+    grid-column: 2;
+}
+
+.Navigation {
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    text-align: center;
+    font-size: 125%;
+    background-color: #876945;
+}
+.home_nav {
+    margin: auto;
+}
+.home_nav > a {
+    color: #30220A;
+}
+.home_nav > a:hover {
+    color: #dbcbb8;
+}
+
+.diet_nav {
+    grid-column: 2;
+    margin: auto;
+}
+.diet_nav > a {
+    color: #30220A;
+}
+.diet_nav > a:hover {
+    color: #dbcbb8;
+}
+    
+.health_nav {
+    grid-column: 3;
+    margin: auto;
+}
+.health_nav > a {
+    color: #30220A;
+}
+.health_nav > a:hover {
+    color: #dbcbb8;
+}
+    
+.source_nav {
+    grid-column: 4;
+    margin: auto;
+}
+.source_nav > button:hover {
+    color: #dbcbb8;
+}
+    
+.source_nav > button {
+    cursor: pointer;
+    color: #30220A;
+    font-weight: bold;
+    text-decoration: underline;
+    font-family: Montserrat;
+    font-size: 150%;
+
+    background-color: transparent;
+    border: none;
+}
+
+.source_drop {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    right: 0%;
+    width: 25%;
+    border-radius: 25px;
+    background-image: linear-gradient(to bottom, #755b3c, #cfad84);
+    animation: Fade linear 1s;
+}
+
+.source_drop > a {
+    color: #30220A;
+}
+.source_drop > a:hover {
+    color: white;
+}
+
+.source_drop > a {
+    color: #30220A;
+}
+.source_drop > a:hover {
+    color: #dbcbb8;
+}
+
+.accountInfo {
+    grid-row: 3;
+    padding: 3% 10px;
+
+    border-bottom: 5px solid #413D21;
+    background-color: #e6d5b7;
+    color: #171105;
+    font-weight: bold;
+    font-family: Montserrat;
+    font-size: 175%;
+}
+.accountInfo > button {
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background-color: #285884;
+    color: #EAE7E7;
+    font-weight: bold;
+    font-family: Montserrat;
+    font-size: 75%;
+}
+
+.Introduction {
+    grid-row: 4;
+    padding: 10px;
+
+    background-color: #e6d5b7;
+    color: #171105;
+    font-family: Helvetica;
+    font-size: 125%;
+}
+.Introduction > h2 {
+    color: #30220A;
+    font-family: Montserrat;
+}
+
+/* Popups */
+.accountPopup, .editPopup {
+    display: none;
+    grid-template-rows: 1fr;
+    
+    grid-row: 1 / 9;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.5);
+    text-align: center;
+    font-size: 200%;
+    animation: Fade 1s;
+}
+.accountWrapper, .editWrapper {
+    display: grid;
+    
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    min-width: 50%;
+    min-height: 50%;
+    border-radius: 25px;
+    background-color: #B09C79;
+}
+.closeButton {
+    position: absolute;
+    right: 0%;
+    transform: translate(-50%, 50%);
+
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #9B3434;
+    color: #E8E8E8;
+    font-size: 20px;
+}
+.accountForms, #editForm {
+    margin: auto;
+
+    font-weight: bold;
+    font-family: Montserrat;
+    color: #30220A;
+}
+#signupForm {
+    display: none;
+}
+#loginForm > label, #signupForm > label {
+    display: block;
+}
+#loginButton, #signupButton {
+    margin: 10px;
+    
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background-color: #2A9A28;
+    color: #142E1A;
+    font-weight: bold;
+    font-family: Montserrat;
+    font-size: 75%;
+}
+#switchSignupButton, #switchLoginButton {
+    margin: 10px;
+
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    font-style: italic;
+    font-size: 60%;
+}
+#signOutButton {
+    margin: 10px;
+
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    font-size: 50%;
+}
+#switchSignupButton:hover, #switchLoginButton:hover, #signOutButton:hover {
+    color: #ededed;
+}
+
+/* Checklists */
+.selectTitle {
+    display: block;
+    
+    font-weight: bold;
+    font-family: Montserrat;
+    font-size: 125%;
+}
+.selectDrop {
+    padding: 0px 10px;
+    cursor: pointer;
+    border: 1px solid #4B4B4B;
+    border-radius: 10px;
+    background-color: white;
+    line-height: 0px;
+    font-size: 100%;
+}
+.checkList {
+    display: none;
+    
+    border-radius: 10px;
+    background-color: #E8E8E8;
+    color: black;
+}
+.checkList > label {
+    display: block;
+}
+
+/* Tables */
+table, th, td {
+    border: 3px solid #85755B;
+    border-collapse: collapse;
+    word-wrap: break-word;
+}
+
+/* Entry options */
+.recordEntry {
+    grid-row: 5;
+    padding: 10px;
+
+    border-bottom: 5px solid #413D21;
+    background-color: #efdec1;
+    color: #30220A;
+    font-family: Montserrat;
+    font-size: 125%;
+}
+#entryForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.25fr 1.5fr 0.25fr;
+    
+    height: 100%;
+}
+.foodEntry > label, .dateEntry > label, .mealEntry > label {
+    display: block;
+
+    font-weight: bold;
+    font-family: Montserrat;
+    font-size: 125%;
+}
+.foodEntry > input, .foodTypeEntry > select, .dateEntry > input, .mealEntry > select {
+    border: 1px solid #4B4B4B;
+    border-radius: 10px;
+    font-size: 100%;
+}
+.foodList {
+    max-width: 100%;
+    max-height: 150px;
+    overflow-y: auto;
+
+    border-radius: 10px;
+}
+.foodTable {
+    table-layout: fixed;
+    
+    width: 100%;
+}
+.foodHeader {
+    background-color: #473B27;
+    color: #EAE7E7;
+}
+.foodName {
+    width: 75%;
+}
+.foodAction {
+    width: 25%;
+}
+.foodInfo {
+    background-color: #D4D2CE;
+    color: #3E3E3E;
+    text-align: center;
+}
+.foodInfo > tr > :nth-child(2) > button {
+    margin: 5px;
+    
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #9B3434;
+    color: #E8E8E8;
+    font-size: 75%;
+}
+.foodEntry {
+    grid-column: 1;
+    grid-row: 2;
+}
+.foodTypeEntry {
+    grid-column: 2;
+    grid-row: 2;
+    margin: 0 auto;
+}
+.dateEntry {
+    grid-column: 3;
+    grid-row: 2;
+    margin: 0 auto;
+}
+.mealEntry {
+    grid-column: 4;
+    grid-row: 2;
+    margin: 0 auto;
+}
+.addFoodButton, #submitEntryButton {
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-family: Montserrat;
+    font-size: 90%;
+}
+.addFoodButton {
+    background-color: #285884;
+    color: #EAE7E7;
+}
+#submitEntryButton {
+    grid-row: 3;
+    margin: 10px 0px;
+    
+    width: 150px;
+    background-color: #2A9A28;
+    color: #142E1A;
+}
+
+/* Filter options */
+.recordFilter {
+    grid-row: 6;
+    padding: 10px;
+
+    background-color: #eee2ce;
+    color: #30220A;
+    font-family: Montserrat;
+    font-size: 125%;
+}
+#filterForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows:  0.25fr 1.5fr 0.25fr;
+
+    height: 100%;
+}
+.dateFilter > fieldset, .dateFilter > fieldset > label, .foodTypeFilter > label, .mealFilter > label {
+    display: block;
+
+    border: none;
+    font-weight: bold;
+    font-family: Montserrat;
+    font-size: 125%;
+}
+.dateFilter > fieldset > input, .foodTypeFilter > select, .mealFilter > select {
+    border: 1px solid #4B4B4B;
+    border-radius: 10px;
+    font-size: 100%;
+}
+.dateFilter > fieldset > label {
+    font-size: 75%;
+}
+.dateFilter {
+    grid-row: 2;
+    margin-left: -5%;
+}
+.foodTypeFilter {
+    grid-column: 2;
+    grid-row: 2;
+    margin: 0 auto 0 0;
+}
+.mealFilter {
+    grid-column: 3;
+    grid-row: 2;
+    margin: 0 auto 0 0;
+}
+#submitFilterButton {
+    grid-row: 3;
+    margin: 10px 0px;
+    
+    cursor: pointer;
+    width: 150px;
+    border: none;
+    border-radius: 10px;
+    background-color: #285884;
+    color: #EAE7E7;
+    font-weight: bold;
+    font-family: Montserrat;
+    font-size: 90%;
+}
+
+/* Record dropdown table */
+.recordDisplay {
+    display: grid;
+    grid-template-rows: 0.15fr 0.25fr;
+    
+    grid-row: 7;
+    padding: 10px;
+    background-color: #f2e6d0;
+}
+.dropBar {
+    grid-row: 1;
+
+    color: #30220A;
+    font-family: Montserrat;
+    font-size: 125%;
+}
+.dropBar > button {
+    padding: 5px;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    background-color: #605542;
+    color: #85755B;
+    font-weight: bold;
+    font-size: 90%;
+}
+.dropTable {
+    display: none;
+
+    grid-row: 2;
+}
+.recordTable {
+    table-layout: fixed;
+    
+    width: 100%;
+    font-size: 125%;
+}
+.recordHeader {
+    background-color: #473B27;
+    color: #EAE7E7;
+}
+.recordInfo {
+    background-color: #D4D2CE;
+    color: #3E3E3E;
+    text-align: center;
+}
+.recordId {
+    width: 5%;
+}
+.recordDate, .recordMeal {
+    width: 10%;
+}
+.recordFood, .recordFoodType {
+    width: 35%;
+}
+.recordAction {
+    width: 5%;
+}
+.recordInfo > tr > :nth-child(6) > button {
+    margin: 5px;
+    
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #285884;
+    color: #EAE7E7;
+    font-size: 90%;
+}
+
+/* Edit form */
+.editPopup {
+    text-align: center;
+    font-size: 125%;
+}
+.editWrapper {
+    width: 90%;
+    height: 60%;
+}
+#editForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 0.25fr;
+
+    margin: 50px;
+    
+    height: 80%;
+    text-align: left;
+}
+.foodEdit > label, .foodTypeEdit > label, .dateEdit > label, .mealEdit > label {
+    display: block;
+    
+    font-weight: bold;
+    font-family: Montserrat;
+    font-size: 125%;
+}
+.foodEdit > input, .foodTypeEdit > select, .dateEdit > input, .mealEdit > select {
+    border: 1px solid #4B4B4B;
+    border-radius: 10px;
+    font-size: 100%;
+}
+.foodEdit {
+    grid-column: 1;
+    margin: 0 auto;
+}
+.foodTypeEdit {
+    grid-column: 2;
+    margin: 0 auto;
+
+    font-weight: normal;
+    font-family: Arial;
+}
+.dateEdit {
+    grid-column: 3;
+    margin: 0 auto;
+}
+.mealEdit {
+    grid-column: 4;
+    margin: 0 auto;
+}
+#submitEditButton {
+    grid-row: 2;
+    margin: 10px 0px;
+    
+    cursor: pointer;
+    width: 150px;
+    border: none;
+    border-radius: 10px;
+    background-color: #2A9A28;
+    color: #142E1A;
+    font-weight: bold;
+    font-family: Montserrat;
+    font-size: 90%;
+}
+#submitDeleteButton {
+    grid-column: 2;
+    grid-row: 2;
+    margin: 10px 0px;
+    
+    cursor: pointer;
+    width: 150px;
+    border: none;
+    border-radius: 10px;
+    background-color: #9B3434;
+    color: #E8E8E8;
+    font-weight: bold;
+    font-family: Montserrat;
+    font-size: 90%;
+}
+
+/* Footer */
+.Footer {
+    grid-row: 8;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.75fr 0.25fr;
+    color: #171105;
+    font-size: 125%;
+    background-color: #B5A281;
+    padding: 5%;
+}
+.related_sources {
+    grid-column: 1;
+}
+.related_sources > a {
+    display: block;
+    line-height: 200%;
+    color: #285884;
+}
+.referenced_sources {
+    grid-column: 2;
+}
+.referenced_sources > a {
+    display: block;
+    line-height: 200%;
+    color: #285884;
+}
+.contacts {
+    grid-column: 3;
+}
+.contacts > a {
+    color: #285884;
+}

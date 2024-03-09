@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>DietLog</title>
+        <link href="CSS/health_information.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div class="Container">
+            <div class="Header">                
+                <div class="Logo">
+                    <a id="logo" href="index.html"><img src="Images/logo.png" alt="Logo"></a>
+                    <a id="title" href="index.html"><h1>DietLog</h1></a>
+                </div>
+                <div class="Search">
+                    <input id="searchBar" type="search" placeholder="Search..." onkeydown="if (event.keyCode == 13) {searchPage();}">
+                    <button id="searchbutton" type="submit" onclick="searchPage()">🔎︎</button>
+                </div>
+            </div>
+             <div class="Navigation">
+                <div class="home_nav">
+                    <a href="index.html"><h2>Home</h2></a>
+                </div>
+                <div class="diet_nav">
+                    <a href="diet_information.html"><h2>Food and Diet</h2></a>
+                </div>
+                <div class="logger_nav">
+                    <a href="diet_logger.html"><h2>Diet Logger</h2></a>
+                </div>
+                <div class="source_nav">
+                    <button type="button" onclick="toggleNavigation()">Other Sources ↓</button>
+                    <div class="source_drop">
+                        <a href="https://www.foodcomposition.co.nz/" target="_blank"><h3>Food Composition</h3></a>
+                        <a href="https://foodinsight.org/" target="_blank"><h3>Food Insight</h3></a>
+                        <a href="https://www.eatthismuch.com/" target="_blank"><h3>Eat This Much</h3></a>
+                    </div>
+                </div>
+            </div>
+            <div class="Content">
+                <div class="Information" id="Info_1">
+                    <div class="Paragraph" id="Text_1">
+                        <h2><u>Diet and Health</u></h2>
+
+                        <p>Good nutrition is essential to keeping current and future generations healthy across the lifespan. A healthy diet helps children grow and develop properly and reduces their risk of chronic diseases. Adults who eat a healthy diet live longer and have a lower risk of obesity, heart disease, type 2 diabetes, and certain cancers. Healthy eating can help people with chronic diseases manage these conditions and avoid complications.</p>
+                        
+                        <p>The current strain of the stay-at-home lifestyle has already led to poor dietary choices for many. Whether you’re finding it hard to source healthy foods or reaching for junk food to offset stress, eating poorly can impair your health. What are the effects of poor diet towards us, and how can we best counteract the harm caused by unhealthy foods?</p>
+                    </div>
+                    
+                    <div class="Image" id="Image_1">
+                        <img src="Images/Diet_Health.png" alt="Healthy Lifestyle">
+                        <p class="captions"><em>Eating well is essential to your current and future health</em></p>
+                    </div>
+                </div>
+                    
+                <div class="Information" id="Info_2">
+                    <div class="Image" id="Image_2">
+                        <img src="Images/Healthy_Family.png" alt="healthy family">
+                        <p class="captions"><em>Diet is an important aspect to focus on, especialy in a family</em></p>
+                    </div>
+                    
+                    <div class="Paragraph" id="Text_2">
+                        <h2><u>Healthy Advice</u></h2>
+                        <p>A healthy diet is essential for good health and nutrition. It protects you against many chronic noncommunicable diseases, such as heart disease, diabetes and cancer. Eating a variety of foods and consuming less salt, sugars and saturated and industrially-produced trans-fats, are essential for healthy diet. Below are some useful information, based on sourced recommendations, to follow a healthy diet, and the benefits of doing so.</p>
+                    </div>
+
+                    <div class="Paragraph" id="Text_3">
+                        <ul>
+                            <li>
+                                <h3>Breastfeed babies and young children</h3>
+                                <p>A healthy diet starts early in life - breastfeeding fosters healthy growth, and may have longer-term health benefits, like reducing the risk of becoming overweight or obese and developing noncommunicable diseases later in life.
+Feeding babies exclusively with breast milk from birth to 6 months of life is important for a healthy diet. It is also important to introduce a variety of safe and nutritious complementary foods at 6 months of age, while continuing to breastfeed until your child is two years old and beyond.</p>
+                            </li>
+                             <li>
+                                 <h3>Eat plenty of vegetables and fruit</h3>
+                                 <p>They are important sources of vitamins, minerals, dietary fibre, plant protein and antioxidants.
+People with diets rich in vegetables and fruit have a significantly lower risk of obesity, heart disease, stroke, diabetes and certain types of cancer.</p>
+                             </li>
+                             <li>
+                                 <h3>Limit intake of sugars</h3>
+                                 <p>For a healthy diet, sugars should represent less than 10% of your total energy intake. Reducing even further to under 5% has additional health benefits.
+Choosing fresh fruits instead of sweet snacks such as cookies, cakes and chocolate helps reduce consumption of sugars.
+Limiting intake of soft drinks, soda and other drinks high in sugars (fruit juices, cordials and syrups, flavoured milks and yogurt drinks) also helps reduce intake of sugars.</p>
+                             </li>
+                             <li>
+                                 <h3>Eat Less Fat</h3>
+                                 <p>Fats and oils and concentrated sources of energy. Eating too much, particularly the wrong kinds of fat, like saturated and industrially-produced trans-fat, can increase the risk of heart disease and stroke.
+Using unsaturated vegetable oils (olive, soy, sunflower or corn oil) rather than animal fats or oils high in saturated fats (butter, ghee, lard, coconut and palm oil) will help consume healthier fats.
+To avoid unhealthy weight gain, consumption of total fat should not exceed 30% of a person's overall energy intake.</p>
+                             </li>
+                             <li>
+                                 <h3>Reduce salt intake</h3>
+                                 <p>Keeping your salt intake to less than 5g per day helps prevent hypertension and reduces the risk of heart disease and stroke in the adult population.
+Limiting the amount of salt and high-sodium condiments (soy sauce and fish sauce) when cooking and preparing foods helps reduce salt intake.</p>
+                             </li>
+                         </ul>
+                    </div>
+                </div>
+
+                <div class="Information" id="Info_3">
+                    <div class="Paragraph" id="Text_4">
+                        <h2>Consequences of Poor Nutrition</h2>
+                        <p>You’ve probably heard the saying, “You are what you eat.” Most of us know that eating well is fundamental to maintaining good health. However, many surprising problems can stem from, or be worsened by, bad nutrition.</p>
+                        
+                        <ul>
+                            <li>
+                                <h3>Decreased energy levels</h3>
+                                <p>While many of us think of eating as an opportunity to enjoy new flavors or to socialize, it’s important to remember that we eat to fuel our bodies. Whole, unprocessed meals of mostly vegetables, fruit, lean protein, and whole grains contribute to healthy functioning and increased energy levels. 
+
+This is because whole foods are often rich in natural vitamins and minerals while also being full of fiber. On the other hand, a diet that is high in salt, sugar, processed foods, and simple starches can lead to spikes and crashes in your blood sugar, leaving you feeling lethargic and low in energy. </p>
+                            </li>
+                             <li>
+                                 <h3>Reduced immunity</h3>
+                                 <p>Eating poorly can also decrease your body’s ability to fight off illness. Research has found that those with a poor diet are more likely to fall ill, and take longer to make a full recovery from illnesses. 
+
+By contrast, those with healthy diets have been found to have stronger overall immune systems, allowing them to fight off illnesses. In addition to making healthy choices, remember to choose a variety of foods to make sure you’re getting a full range of your needed vitamins and minerals. </p>
+                             </li>
+                             <li>
+                                 <h3>Disrupted sleep quality</h3>
+                                 <p>There are many factors that can lead to a lower quality of sleep, and poor nutrition is one of them. Unhealthy diets can lead to obesity, which is correlated with conditions such as sleep apnea, snoring, and restless legs syndrome. 
+
+Even if you have a healthy body mass index (BMI), a poor diet can lead to developing conditions such as heartburn and acid reflux, which can further interrupt a good night’s sleep. </p>
+                             </li>
+                             <li>
+                                 <h3>Affected mood</h3>
+                                 <p>Just as sugary, starchy foods like cakes, biscuits, and white bread can cause energy crashes, they can also affect your mood the same way, leading to increased levels of depression and low mood. This is thought to be because they have a high glycemic load and cause a cycle of blood sugar spikes and insulin responses.  
+
+On the other hand, recent research has shown that people who eat a healthy diet with lots of vegetables, fruit, and whole grains report decreased levels of depression and fatigue. </p>
+                             </li>
+                             <li>
+                                 <h3>Increased risk of memory problems</h3>
+                                 <p>Having a poor diet might seem like a short-term issue, but it could have devastating consequences for your long-term cognitive function. Multiple studies have identified a link between nutrients found in a healthy diet and a reduced risk of dementia and cognitive decline. 
+
+While skipping a burger and having a salad may not seem that life-changing at first, it could protect your cognitive function for years to come. </p>
+                             </li>
+                         </ul>
+                    </div>
+                    
+                    <div class="Image" id="Image_3">
+                        <img src="Images/Unhealthy_Food.png" alt="Unhealhty Food">
+                        <p class="captions"><em>Unhealthy food can lead to malnutrition, which can cause severe health problems</em></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="Footer">
+                <div class="related_sources">
+                    <h4><u>Related sources</u></h4>
+                <a href="https://www.nutrition.gov/" target="_blank">USDA Nutrition</a>
+                    <a href="https://www.health.govt.nz/" target="_blank">NZ Health</a>
+                    <a href="https://www.who.int/" target="_blank">World Health Organisation</a>
+                </div>
+
+                <div class="referenced_sources">
+                    <h4><u>Referenced sources</u></h4>
+                    <a href="https://vikaspedia.in/health/nutrition/dietary-guidelines-1/dietary-guideline-1#:~:text=A%20balanced%20diet%20is%20one,physiological%20status%20and%20physical%20activity." target="_blank">Vikaspedia</a>
+                    <a href="https://www.monarquehealth.com/blog/5-things-poor-nutrition-does-to-your-overall-health" target="_blank">Monarque Health</a>
+                    <a href="https://www.cdc.gov/chronicdisease/resources/publications/factsheets/nutrition.htm#:~:text=Adults%20who%20eat%20a%20healthy,these%20conditions%20and%20avoid%20complications." target="_blank">CDC</a>
+                </div>
+
+                <div class="contacts">
+                    <h4><u>Contact</u></h4>
+                    <p>Phone: +64 28-435-7966</p>
+                    <span>Email: </span>
+                    <a href="mailto:mingraygoy@gmail.com" target="_blank">mingraygoy@gmail.com</a>
+                </div>
+
+                <a href="index.html"><img src="Images/logo.png" alt="Logo"></a>
+                <img id="food_warning" src="Images/food_warning.png" alt="Allergy warning"></img>
+            </div>
+        </div>
+        
+        <script src="JS/health_information.js"></script>
+    </body>
+</html>

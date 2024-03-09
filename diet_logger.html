@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>DietLog</title>
+        <link href="CSS/diet_logger.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div class="Main">
+            <!-- Title/Logo -->
+            <div class="Header">                
+                <div class="Logo">
+                    <a id="logo" href="index.html"><img src="Images/logo.png" alt="Logo"></a>
+                    <a id="title" href="index.html"><h1>DietLog</h1></a>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="Navigation">
+                <div class="home_nav">
+                    <a href="index.html"><h2>Home</h2></a>
+                </div>
+                <div class="diet_nav">
+                    <a href="diet_information.html"><h2>Food and Diet</h2></a>
+                </div>
+                <div class="health_nav">
+                    <a href="health_information.html"><h2>Lifestyle and Health</h2></a>
+                </div>
+                <div class="source_nav">
+                    <button type="button" onclick="toggleNavigation()">Other Sources ↓</button>
+                    <div class="source_drop">
+                        <a href="https://www.foodcomposition.co.nz/" target="_blank"><h3>Food Composition</h3></a>
+                        <a href="https://foodinsight.org/" target="_blank"><h3>Food Insight</h3></a>
+                        <a href="https://www.eatthismuch.com/" target="_blank"><h3>Eat This Much</h3></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Account -->
+            <div class="accountInfo">
+                <span id="Username">User: __________</span>
+                <button id="accountButton" onclick="togglePopup('accountPopup', 'open')">Log In/Sign Up</button>
+            </div>
+
+            <!-- Introduction -->
+            <div class="Introduction">
+                <h2><u>Introduction</u></h2>
+                <p>Welcome to the DietLog's diet logger! Here, you can keep records of your past meals to help you with your diet management and even plan for future meal plans. To get started, you must create or be logged into an account. You can add new records with the input sections and also filter for your record data displayed below. Each record entry stores information for one meal. You can enter multiple food items and food types you have eaten for each meal, along with the date and meal time. An edit section is also available to allow you to change or delete individual record details.</p>
+            </div>
+
+            <!-- Login/Signup popup -->
+            <div class="accountPopup" id="accountScreen">
+                <div class="accountWrapper">
+                    <button type="button" class="closeButton" onclick="togglePopup('accountPopup', 'close')">✖</button>
+                    
+                    <!-- Login and signup forms -->
+                    <div class="accountForms">
+                        <form id="loginForm" action="PHP/account.php" method="post">
+                            <input type="hidden" name="accountForm" value="login">
+                            
+                            <label for="userLogin">Username</label>
+                            <input type="text" id="userLogin" maxlength="63" name="Username">
+                            <label for="passwordLogin">Password</label>
+                            <input type="password" id="passwordLogin" name="Password">
+                            <br>
+                            <button type="button" id="loginButton" onclick="submitForm('login')" name="submitButton">Confirm</button>
+                            <br>
+                            <button type="button" id="switchSignupButton" onclick="switchAccountForm('signup')"><u>Create a new account</u></button>
+                        </form>
+                        <form id="signupForm" action="PHP/account.php" method="post">
+                            <input type="hidden" name="accountForm" value="signup">
+                            
+                            <label for="userSignup">Username</label>
+                            <input type="text" id="userSignup" maxlength="63" name="Username">
+                            <label for="passwordSignup">Password</label>
+                            <input type="password" id="passwordSignup" name="Password">
+                            <label for="passwordConfirmSignup">Confirm Password</label>
+                            <input type="password" id="passwordConfirmSignup" name="confirmPassword">
+                            <br>
+                            <button type="button" id="signupButton" onclick="submitForm('signup')" name="submitButton">Confirm</button>
+                            <br>
+                            <button type="button" id="switchLoginButton" onclick="switchAccountForm('login')"><u>Login with an account</u></button>
+                        </form>
+                    </div>
+                    
+                    <button type="button" id="signOutButton" onclick="updateAccount('signout')"><u>Sign Out</u></button>
+                </div>
+            </div>
+
+            <!-- Record entry options -->
+            <div class="recordEntry">
+                <form id="entryForm" action="PHP/update.php" method="post">
+                    <h2><u>Record Entry</u></h2>
+                    <input type="hidden" name="recordForm" value="entry">
+                    <input type="hidden" class="userInfo" name="userId" value="">
+                    
+                    <!-- Foods -->
+                    <div class="foodEntry">
+                        <label for="foodEntryOption">Food</label>
+                        <input type="hidden" name="Food" value="">
+                        <input type="text" id="foodEntryOption" maxlength="63" onkeydown="return (event.keyCode!=13);">
+                        
+                        <button type="button" class="addFoodButton" onclick="addFood('entry')">Add</button>
+                        
+                        <div class="foodList">
+                            <table class="foodTable" id="foodEntryTable">
+                                <thead class="foodHeader">
+                                    <tr>
+                                        <th class="foodName">Name</th>
+                                        <th class="foodAction">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="foodInfo" id="foodEntryInfo">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Food types -->
+                    <div class="foodTypeEntry">
+                        <span class="selectTitle">Food Types</span>
+                        <span class="selectDrop" onclick="toggleChecklist('foodTypeEntryList')">-- Choose food types -- ▼</span>
+
+                        <div class="checkList" id="foodTypeEntryList">
+                            <label for="starch/grainEntry">
+                                <input type="checkbox" id="starch/grainEntry" name=foodTypes[] value="Starch/Grain">
+                                Starch/Grain
+                            </label>
+                            <label for="meatEntry">
+                                <input type="checkbox" id="meatEntry" name=foodTypes[] value="Meat">
+                                Meat
+                            </label>
+                            <label for="vegetableEntry">
+                                <input type="checkbox" id="vegetableEntry" name=foodTypes[] value="Vegetable">
+                                Vegetable</label>
+                            <label for="fruitEntry">
+                                <input type="checkbox" id="fruitEntry" name=foodTypes[] value="Fruit">
+                                Fruit
+                            </label>
+                            <label for="fat/oil/sugarEntry">
+                                <input type="checkbox" id="fat/oil/sugarEntry" name=foodTypes[] value="Fat/Oil/Sugar">
+                                Fat/Oil/Sugar
+                            </label>
+                            <label for="miscellaneousEntry">
+                                <input type="checkbox" id="miscellaneousEntry" name=foodTypes[] value="Miscellaneous">
+                                Miscellaneous
+                            </label>
+                        </div>
+                    </div>
+                    <!-- Date entry -->
+                    <div class="dateEntry">
+                        <label for="dateEntry">Date</label>
+                        <input type="date" id="dateEntry" name="Date">
+                    </div>
+                    <!-- Meal time entry -->
+                    <div class="mealEntry">  
+                        <label for="mealEntry">Meal</label>
+                        <select id="mealEntry" name="Meal">
+                            <option value="" selected="selected" disabled>-- Choose meal time --</option>
+                            <option value="Breakfast">Breakfast</option>
+                            <option value="Lunch">Lunch</option>
+                            <option value="Dinner">Dinner</option>
+                        </select>
+                    </div>
+                    <button type="button" id="submitEntryButton" onclick="submitForm('entry')">Submit</button>
+                </form>
+            </div>
+
+            <!-- Record filter options -->
+            <div class="recordFilter">
+                <form id="filterForm" action="PHP/filter.php" method="post">
+                    <h2><u>Filter Options</u></h2>
+                    <input type="hidden" class="userInfo" name="userId" value="">
+                    
+                    <!-- Date filter -->
+                    <div class="dateFilter">
+                        <fieldset>
+                            <legend>Date Range</legend>
+                            <label for="dateLowerFilter">Min: </label>
+                            <input type="date" id="dateLowerFilter" name="Date[]" value="0001-01-01">
+                            <label for="dateUpperFilter">Max: </label>
+                            <input type="date" id="dateUpperFilter" name="Date[]" value="9999-12-31">
+                        </fieldset>
+                    </div>
+                    <!-- Food type filter -->
+                    <div class="foodTypeFilter">
+                        <span class="selectTitle">Food Types</span>
+                        <span class="selectDrop" onclick="toggleChecklist('foodTypeFilterList')">-- Choose food types -- ▼</span>
+
+                        <div class="checkList" id="foodTypeFilterList">
+                            <label for="starch/grainFilter">
+                                <input type="checkbox" id="starch/grainFilter" name=foodTypes[] value="Starch/Grain" checked>
+                                Starch/Grain
+                            </label>
+                            <label for="meatFilter">
+                                <input type="checkbox" id="meatFilter" name=foodTypes[] value="Meat" checked>
+                                Meat
+                            </label>
+                            <label for="vegetableFilter">
+                                <input type="checkbox" id="vegetableFilter" name=foodTypes[] value="Vegetable" checked>
+                                Vegetable</label>
+                            <label for="fruitFilter">
+                                <input type="checkbox" id="fruitFilter" name=foodTypes[] value="Fruit" checked>
+                                Fruit
+                            </label>
+                            <label for="fat/oil/sugarFilter">
+                                <input type="checkbox" id="fat/oil/sugarFilter" name=foodTypes[] value="Fat/Oil/Sugar" checked>
+                                Fat/Oil/Sugar
+                            </label>
+                            <label for="miscellaneousFilter">
+                                <input type="checkbox" id="miscellaneousFilter" name=foodTypes[] value="Miscellaneous" checked>
+                                Miscellaneous
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Meal filter -->
+                    <div class="mealFilter">
+                        <span class="selectTitle">Meal Times</span>
+                        <span class="selectDrop" onclick="toggleChecklist('mealFilterList')">-- Choose meal times -- ▼</span>
+
+                        <div class="checkList" id="mealFilterList">
+                            <label for="breakfastFilter">
+                                <input type="checkbox" id="breakfastFilter" name=meals[] value="Breakfast" checked>
+                                Breakfast
+                            </label>
+                            <label for="lunchFilter">
+                                <input type="checkbox" id="lunchFilter" name=meals[] value="Lunch" checked>
+                                Lunch
+                            </label>
+                            <label for="dinnerFilter">
+                                <input type="checkbox" id="dinnerFilter" name=meals[] value="Dinner" checked>
+                                Dinner
+                            </label>
+                        </div>
+                    </div>
+                    <button type="button" id="submitFilterButton" onclick="submitForm('filter')">Filter Records</button>
+                </form>
+            </div>
+
+            <!-- Record dropdown -->
+            <div class="recordDisplay">
+                <div class="dropBar">
+                    <h2><u>Record Table</u></h2>
+                    <button onclick="toggleRecords()">▼</button>
+                </div>
+                <!-- Record table -->
+                <div class="dropTable">
+                    <table class="recordTable" id="recordTable">
+                        <thead class="recordHeader">
+                            <tr>
+                                <th class="recordId">ID</th>
+                                <th class="recordDate">Date</th>
+                                <th class="recordMeal">Meal</th>
+                                <th class="recordFood">Food</th>
+                                <th class="recordFoodType">Food Type</th>
+                                <th class="recordAction">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="recordInfo" id="recordInfo">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Edit form popup -->
+            <div class="editPopup">
+                <div class="editWrapper">
+                    <button type="button" class="closeButton" onclick="togglePopup('editPopup', 'close')">✖</button>
+
+                    <form id="editForm" action="PHP/update.php" method="post">
+                        <input type="hidden" name="recordForm" value="edit">
+                        <input type="hidden" class="userInfo" name="userId" value="">
+                        <input type="hidden" name="recordId" value="">
+                        
+                        <!-- Food list -->
+                        <div class="foodEdit">
+                            <label for="foodEdit">Food</label>
+                            <input type="hidden" name="Food" value="">
+                            <input type="text" id="foodEdit" maxlength="63" onkeydown="return (event.keyCode!=13);">
+                            
+                            <button type="button" class="addFoodButton" onclick="addFood('edit')">Add</button>
+                            <div class="foodList">
+                                <table class="foodTable" id="foodEditTable">
+                                    <thead class="foodHeader">
+                                        <tr>
+                                            <th class="foodName">Name</th>
+                                            <th class="foodAction">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="foodInfo" id="foodEditInfo">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- Food type list -->
+                        <div class="foodTypeEdit">
+                            <span class="selectTitle">Food Types</span>
+                            <span class="selectDrop" onclick="toggleChecklist('foodTypeEditList')">-- Choose food types -- ▼</span>
+                            <div class="checkList" id="foodTypeEditList">
+                                <label for="starch/grainEdit">
+                                    <input type="checkbox" id="starch/grainEdit" name=foodTypes[] value="Starch/Grain">
+                                    Starch/Grain
+                                </label>
+                                <label for="meatEdit">
+                                    <input type="checkbox" id="meatEdit" name=foodTypes[] value="Meat">
+                                    Meat
+                                </label>
+                                <label for="vegetableEdit">
+                                    <input type="checkbox" id="vegetableEdit" name=foodTypes[] value="Vegetable">
+                                    Vegetable</label>
+                                <label for="fruitEdit">
+                                    <input type="checkbox" id="fruitEdit" name=foodTypes[] value="Fruit">
+                                    Fruit
+                                </label>
+                                <label for="fat/oil/sugarEdit">
+                                    <input type="checkbox" id="fat/oil/sugarEdit" name=foodTypes[] value="Fat/Oil/Sugar">
+                                    Fat/Oil/Sugar
+                                </label>
+                                <label for="miscellaneousEdit">
+                                    <input type="checkbox" id="miscellaneousEdit" name=foodTypes[] value="Miscellaneous">
+                                    Miscellaneous
+                                </label>
+                            </div>
+                        </div>
+                        <!-- Date edit -->
+                        <div class="dateEdit">
+                            <label for="dateEdit">Date</label>
+                            <input type="date" id="dateEdit" name="Date">
+                        </div>
+                        <!-- Meal time edit -->
+                        <div class="mealEdit">
+                            <label for="mealEdit">Meal Time</label>
+                            <select id="mealEdit" name="Meal">
+                                <option value="Breakfast">Breakfast</option>
+                                <option value="Lunch">Lunch</option>
+                                <option value="Dinner">Dinner</option>
+                            </select>
+                        </div>
+                        
+                        <button type="button" id="submitEditButton" onclick="submitForm('edit')">Update Record</button>
+                        <button type="button" id="submitDeleteButton" onclick="submitForm('delete')">Delete Record</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="Footer">
+                <div class="related_sources">
+                    <h4><u>Related sources</u></h4>
+                <a href="https://www.nutrition.gov/" target="_blank">USDA Nutrition</a>
+                    <a href="https://www.health.govt.nz/" target="_blank">NZ Health</a>
+                    <a href="https://www.who.int/" target="_blank">World Health Organisation</a>
+                </div>
+
+                <div class="referenced_sources">
+                    <h4><u>Referenced sources</u></h4>
+                    <a href="https://vikaspedia.in/health/nutrition/dietary-guidelines-1/dietary-guideline-1#:~:text=A%20balanced%20diet%20is%20one,physiological%20status%20and%20physical%20activity." target="_blank">Vikaspedia</a>
+                    <a href="https://www.monarquehealth.com/blog/5-things-poor-nutrition-does-to-your-overall-health" target="_blank">Monarque Health</a>
+                    <a href="https://www.cdc.gov/chronicdisease/resources/publications/factsheets/nutrition.htm#:~:text=Adults%20who%20eat%20a%20healthy,these%20conditions%20and%20avoid%20complications." target="_blank">CDC</a>
+                </div>
+
+                <div class="contacts">
+                    <h4><u>Contact</u></h4>
+                    <p>Phone: +64 28-435-7966</p>
+                    <span>Email: </span>
+                    <a href="mailto:mingraygoy@gmail.com" target="_blank">mingraygoy@gmail.com</a>
+                </div>
+
+                <a href="index.html"><img src="Images/logo.png" alt="Logo"></a>
+            </div>
+        </div>
+
+        <script src="JS/diet_logger.js"></script>
+    </body>
+</html>

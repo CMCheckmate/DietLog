@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>DietLog</title>
+        <link href="CSS/diet_information.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div class="Container">
+            <div class="Header">                
+                <div class="Logo">
+                    <a id="logo" href="index.html"><img src="Images/logo.png" alt="Logo"></a>
+                    <a id="title" href="index.html"><h1>DietLog</h1></a>
+                </div>
+                <div class="Search">
+                    <input id="searchBar" type="search" placeholder="Search..." onkeydown="if (event.keyCode == 13) {searchPage();}">
+                    <button id="searchbutton" type="submit" onclick="searchPage()">🔎︎</button>
+                </div>
+            </div>
+                
+             <div class="Navigation">
+                <div class="home_nav">
+                    <a href="index.html"><h2>Home</h2></a>
+                </div>
+                <div class="health_nav">
+                    <a href="health_information.html"><h2>Lifestyle and Health</h2></a>
+                </div>
+                <div class="logger_nav">
+                    <a href="diet_logger.html"><h2>Diet Logger</h2></a>
+                </div>
+                <div class="source_nav">
+                    <button type="button" onclick="toggleNavigation()">Other Sources ↓</button>
+                    <div class="source_drop">
+                        <a href="https://www.foodcomposition.co.nz/" target="_blank"><h3>Food Composition</h3></a>
+                        <a href="https://foodinsight.org/" target="_blank"><h3>Food Insight</h3></a>
+                        <a href="https://www.eatthismuch.com/" target="_blank"><h3>Eat This Much</h3></a>
+                    </div>
+                </div>
+            </div>
+            <div class="Content">
+                <div class="Information" id="Info_1">
+                    <div class="Paragraph" id="Text_1">
+                        <h2><u>A Balanced Diet</u></h2>
+                        <p>A balanced diet is one which provides all the nutrients in required amounts and proper proportions. It can easily be achieved through a blend of the four basic food groups. The quantities of foods needed to meet the nutrient requirements vary with age, gender and physical activity. A balanced diet should provide around 50-60% of total calories from carbohydrates, about 10-15% from proteins and 20-30% fat.
+                        </p>
+                        <p>
+In addition (technical information onwards), a balanced diet should provide other non-nutrients such as dietary fibre, antioxidants and phytochemicals which bestow positive health benefits. Antioxidants such as vitamins C and E, beta-carotene, riboflavin and selenium protect the human body from free radical damage. Other phytochemicals such as polyphenols, flavones, etc., also afford protection against oxidant damage. Spices like turmeric, ginger, garlic, cumin and cloves are rich in antioxidants.
+</p>
+                    </div>
+                    <div class="Image" id="Image_1">
+                        <img src="Images/Balanced_Diet.png" alt="Balanced Diet">
+                        <p class="captions"><em>A balanced diet leads to a healthy life</em></p>
+                    </div>
+                </div>
+                <div class="Information" id="Info_2">
+                    <div class="Image" id="Image_2">
+                        <img src="Images/Food_Pyramid.png" alt="Food Pyramid">
+                        <br>
+                        <a class="captions" href="https://en.wikipedia.org/wiki/Food_pyramid_(nutrition)"><em>United States Department of Agriculture Original Food Pyramid</em></a>
+                    </div>
+                    
+                    <div class="Paragraph" id="Text_2">
+                        <h2><u>Food Pyramid</u></h2>
+                        <p>A Food Pyramid is a representation of the optimal number of servings to be eaten each day from each of the basic food groups. The Food Pyramid shows how much of what you eat overall should come from each shelf to achieve a healthy, balanced diet. The shape of the Food Pyramid shows the types of foods and drinks people need to eat most for healthy eating. It is divided into six shelves and each provides you with the range of nutrients and energy needed for good health. Healthy eating is all about choosing the right amounts from each shelf.
+Following the Food Pyramid doesn’t mean that you need to achieve balance with every meal, but aim to get the balance right over the day and over the week. Small changes can make a big difference.</p>
+                    </div>
+                    
+                    <div class="Paragraph" id="Text_3">
+                        <ul>
+                            <li>
+                                <h3>Grains</h3>
+                                <p>These foods provide complex carbohydrates, which are a good source of energy and provide much nutrition when unrefined. Examples include corn, wheat, pasta, and rice.</p>
+                            </li>
+                            <li>
+                                <h3>Vegetables</h3>
+                                <p>A vegetable is not considered a grain, fruit, nut, spice, or herb. For example, the stem, root, flower, etc., may be eaten as vegetables. Vegetables contain many vitamins and minerals; however, different vegetables contain different balances of nutrients, so it is important to eat a wide variety of types. For example, orange and dark green vegetables typically contain vitamin A, dark green vegetables contain vitamin C, and vegetables like broccoli and related plants contain iron and calcium. Vegetables are very low in fats and calories, but ingredients added in preparation can often add these.</p>
+                            </li>
+                            <li>
+                                <h3>Fruits</h3>
+                                <p>Fruits are the sweet-tasting seed-bearing parts of plants. These include apples, oranges, grapes, bananas, etc. Fruits are low in calories and fat and are a source of natural sugars, fibre and vitamins. Processing fruit when canning or making into juices may add sugars and remove nutrients. The fruit food group is sometimes combined with the vegetable food group. Note that there are a number of fruits which are conventionally not considered fruits in cuisine because they lack the characteristic sweet taste, e.g., tomatoes or avocados.</p>
+                            </li>
+                            <li>
+                                <h3>Dairy</h3>
+                                <p>Dairy products are produced from the milk of mammals. They include milk, yoghurt and cheese. Milk is a rich source of dietary calcium and also provides protein, phosphorus, vitamin A, and vitamin D. However, many dairy products are high in saturated fat and cholesterol compared to vegetables, fruits and whole grains, which is why skimmed products are available as an alternative. Historically, adults were recommended to consume three cups of dairy products per day.  More recently, evidence is mounting that dairy products have greater levels of negative effects on health than previously thought and confer fewer benefits. For example, recent research has shown that dairy products are not related to stronger bones or less fractures; on the contrary, another study showed that milk (and yoghurt) consumption results in higher bone mineral density in the hip. Overall, the majority of research suggests that dairy has some beneficial effects on bone health, in part because of milk's other nutrients.</p>
+                            </li>
+                            <li>
+                                <h3>Meat and beans</h3>
+                                <p>Meat is the tissue – usually muscle – of an animal. Since most parts of many animals are edible, there is a vast variety of meats. Meat is a major source of protein, as well as iron, zinc, and vitamin B12. Meats, poultry, and fish include beef, chicken, pork, salmon, tuna, shrimp, and eggs. The meat group is one of the major compacted food groups in the food guide pyramid. Since many of the same nutrients found in meat can also be found in foods like eggs, dry beans, and nuts, such foods are typically placed in the same category as meats, as meat alternatives. These include tofu, products that resemble meat or fish but are made with soy, eggs, and cheeses. For those who do not consume meat or animal products, meat analogs, tofu, beans, lentils, chickpeas, nuts and other high-protein vegetables are also included in this group. The food guide pyramid suggests that adults eat 2–3 servings per day. One serving of meat is 4 oz (110 g), about the size of a deck of cards.</p>
+                            </li>
+                            <li>
+                                <h3>Oils and sweets</h3>
+                                <p>A food pyramid's tip is the smallest part, so the fats and sweets in the top of the Food Pyramid should comprise the smallest percentage of the diet. The foods at the top of the food pyramid should be eaten sparingly because they provide calories, but not much in the way of nutrition. These foods include salad dressings, oils, cream, butter, margarine, sugars, soft drinks, candies, and sweet desserts. The idea of this is to reduce the temptation to eat so much junk food and excessive fats and sugars, as there is already enough fat and sugar in the rest of the diet. THe section of fruit within the pyramid already represents the fact that sugar is inevitable in that group.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="Information" id="Info_3">
+                    <div class="Paragraph" id="Text_4">
+                        <h2><u>Alternative Choices</u></h2>
+                        <p>A lot of food we regularly eat in daily life include excessive fats, oils or sweets. Try choosing foods that are low in saturated fat, sugar and salt. Eating too many foods that are high in saturated fat (animal fat  and coconut and palm oils), sugar and salt can be bad for your health. Choosing foods with unsaturated fats (from plants, excluding coconut and palm oils) rather than saturated fat can lower your risk of heart disease.</p>
+                        <table class="foodAlternatives">
+                            <thead>
+                                <tr>
+                                    <th>Original</th>
+                                    <th>Alternative</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Butter</td>
+                                    <td>Margarine or other plant-based unsaturated spreads</td>
+                                </tr>                                
+                                <tr>
+                                    <td>White bread</td>
+                                    <td>Higher fibre, dense whole grain bread</td>
+                                </tr>
+                                <tr>
+                                    <td>Coconut oil</td>
+                                    <td>Small amount of plant-based unsaturated oils – if using oil for cooking, choose monounsaturated oil such as canola, olive or rice bran oils</td>
+                                </tr>
+                                <tr>
+                                    <td>Muesli bars</td>
+                                    <td>Fresh fruit or a small handful of unsalted nuts</td>
+                                </tr>
+                                <tr>
+                                    <td>Sugary drinks</td>
+                                    <td>Water. It is nice chilled, with fresh mint and/ or a slice of lemon</td>
+                                </tr>
+                                <tr>
+                                    <td>High-fat takeaways</td>
+                                    <td>Healthier option takeaways, eg, kebabs or wraps with plenty of salad, non-fried Asian rice or noodle dishes with plenty of vegetables</td>
+                                </tr>
+                                <tr>
+                                    <td>Chips</td>
+                                    <td>Vegetable sticks and hummus, or homemade popcorn (go easy on the salt)</td>
+                                </tr>
+                                <tr>
+                                    <td>Sugar-coated breakfast cereal</td>
+                                    <td>Whole grain cereal, eg, porridge or whole wheat breakfast biscuits</td>
+                                </tr>
+                                <tr>
+                                    <td>Lard/dripping</td>
+                                    <td>Water (for roasting meat), small amount of plant-based oils (as mentioned above)</td>
+                                </tr>
+                                <tr>
+                                    <td>High Fat Milk/Cheese</td>
+                                    <td>Low/Reduced Fat Milk/Cheese, such as edam cheese</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="Image" id="Image_3">
+                        <img src="Images/Food_Types.png" alt="Common Food Ingredients">
+                        <br>
+                        <p class="captions"><em>Healthy substitutions for daily foods can help lower the risk of health related diseases</em></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="Footer">
+                <div class="related_sources">
+                    <h4><u>Related sources</u></h4>
+                <a href="https://www.nutrition.gov/" target="_blank">USDA Nutrition</a>
+                    <a href="https://www.health.govt.nz/" target="_blank">NZ Health</a>
+                    <a href="https://www.who.int/" target="_blank">World Health Organisation</a>
+                </div>
+
+                <div class="referenced_sources">
+                    <h4><u>Referenced sources</u></h4>
+                    <a href="https://vikaspedia.in/health/nutrition/dietary-guidelines-1/dietary-guideline-1#:~:text=A%20balanced%20diet%20is%20one,physiological%20status%20and%20physical%20activity." target="_blank">Vikaspedia</a>
+                    <a href="https://www.monarquehealth.com/blog/5-things-poor-nutrition-does-to-your-overall-health" target="_blank">Monarque Health</a>
+                    <a href="https://www.cdc.gov/chronicdisease/resources/publications/factsheets/nutrition.htm#:~:text=Adults%20who%20eat%20a%20healthy,these%20conditions%20and%20avoid%20complications." target="_blank">CDC</a>
+                </div>
+
+                <div class="contacts">
+                    <h4><u>Contact</u></h4>
+                    <p>Phone: +64 28-435-7966</p>
+                    <span>Email: </span>
+                    <a href="mailto:mingraygoy@gmail.com" target="_blank">mingraygoy@gmail.com</a>
+                </div>
+
+                <a href="index.html"><img src="Images/logo.png" alt="Logo"></a>
+                <img id="food_warning" src="Images/food_warning.png" alt="Allergy warning"></img>
+            </div>
+        </div>
+        
+        <script src="JS/diet_information.js"></script>
+    </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>DietLog</title>
+        <link href="CSS/homepage.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div class="Container">
+            <div class="Header">
+                <div class="Logo">
+                    <a id="logo" href="index.html"><img src="Images/logo.png" alt="Logo"></a>
+                    <a id="title" href="index.html"><h1>DietLog</h1></a>
+                </div>
+            </div>
+            <div class="Navigation">
+                <div class="diet_nav">
+                    <a href="diet_information.html"><h2>Food and Diet</h2></a>
+                </div>
+                <div class="health_nav">
+                    <a href="health_information.html"><h2>Lifestyle and Health</h2></a>
+                </div>
+                <div class="logger_nav">
+                    <a href="diet_logger.html"><h2>Diet Logger</h2></a>
+                </div>
+                <div class="source_nav">
+                    <button type="button" onclick="toggleNavigation()">Other Sources ↓</button>
+                    <div class="source_drop">
+                        <a href="https://www.foodcomposition.co.nz/" target="_blank"><h3>Food Composition</h3></a>
+                        <a href="https://foodinsight.org/" target="_blank"><h3>Food Insight</h3></a>
+                        <a href="https://www.eatthismuch.com/" target="_blank"><h3>Eat This Much</h3></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="Introduction">
+                <img id="display_1" src="Images/Food_1.png" alt="Homepage Display"></img>
+                <img id="display_2" src="Images/Food_2.png" alt="Homepage Display"></img>
+                <img id="display_3" src="Images/Food_3.png" alt="Homepage Display"></img>
+
+                <div class="Summary">
+                    <h3><u>Diet and Lifestyle</u></h3>
+                    <p>Are you regularly feeling tired, especially in the morning? This could be because you're skipping breakfast or not eating properly. DietLog could help you solve these problems with some simple but trivial facts. Learn more about how to take care of your own diet and understand just how important food is to our health.</p>
+                    <br>
+                    <p>We provide sources and links to other food, diet and health sites related. You can also keep track and plan your meals with our handy diet logger system.</p>
+                    <br>
+                    <button class="dot" onclick="toggleBackground(0)"></button>
+                    <button class="dot" onclick="toggleBackground(1)"></button>
+                    <button class="dot" onclick="toggleBackground(2)"></button>
+                    <br>
+                    <button id="account_button" onclick="accountLogin()"><b>Login/Sign Up</b></button>
+                </div>
+            </div>
+            
+            <div class="Footer">
+                <div class="related_sources">
+                    <h4><u>Related sources</u></h4>
+                <a href="https://www.nutrition.gov/" target="_blank">USDA Nutrition</a>
+                    <a href="https://www.health.govt.nz/" target="_blank">NZ Health</a>
+                    <a href="https://www.who.int/" target="_blank">World Health Organisation</a>
+                </div>
+
+                <div class="referenced_sources">
+                    <h4><u>Referenced sources</u></h4>
+                    <a href="https://vikaspedia.in/health/nutrition/dietary-guidelines-1/dietary-guideline-1#:~:text=A%20balanced%20diet%20is%20one,physiological%20status%20and%20physical%20activity." target="_blank">Vikaspedia</a>
+                    <a href="https://www.monarquehealth.com/blog/5-things-poor-nutrition-does-to-your-overall-health" target="_blank">Monarque Health</a>
+                    <a href="https://www.cdc.gov/chronicdisease/resources/publications/factsheets/nutrition.htm#:~:text=Adults%20who%20eat%20a%20healthy,these%20conditions%20and%20avoid%20complications." target="_blank">CDC</a>
+                </div>
+
+                <div class="contacts">
+                    <h4><u>Contact</u></h4>
+                    <p>Phone: +64 28-435-7966</p>
+                    <span>Email: </span>
+                    <a href="mailto:mingraygoy@gmail.com" target="_blank">mingraygoy@gmail.com</a>
+                </div>
+
+                <a href="index.html"><img src="Images/logo.png" alt="Logo"></a>
+            </div>
+        </div>
+        
+        <script src="JS/homepage.js"></script>
+    </body>
+</html>

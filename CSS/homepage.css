@@ -1,0 +1,217 @@
+@keyframes slider {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 0%;
+    }
+}
+@keyframes Fade {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+body {
+    margin: 0px;
+    background-color: #F0D6A7;
+}
+
+/* Wrapper */
+.Container {
+    display: grid;
+    grid-template-rows: 0.25fr 0.1fr 1.5fr 0.25fr;
+    background-color: #F0D6A7;
+    min-width: 100vh;
+    min-height: 100vh;
+}
+
+.Header {
+    display: grid;
+    background-color: #3d2f1f;
+    padding: 0% 5%;
+}
+.Logo {
+    display: grid;
+    grid-template-columns: 0.1fr 0.2fr;
+    margin: auto;
+}
+.Logo > a {
+    font-size: 300%;
+    color: #dbcbb8;
+}
+#logo {
+    margin: auto;
+}
+#title {
+    grid-column: 2;
+}
+
+.Navigation {
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    text-align: center;
+    font-size: 125%;
+    background-color: #876945;
+}
+.diet_nav {
+    margin: auto;
+}
+.diet_nav > a {
+    color: #30220A;
+}
+.diet_nav > a:hover {
+    color: #dbcbb8;
+}
+
+.health_nav {
+    grid-column: 2;
+    margin: auto;
+}
+.health_nav > a {
+    color: #30220A;
+}
+.health_nav > a:hover {
+    color: #dbcbb8;
+}
+    
+.logger_nav {
+    grid-column: 3;
+    margin: auto;
+}
+.logger_nav > a {
+    color: #30220A;
+}
+.logger_nav > a:hover {
+    color: #dbcbb8;
+}
+    
+.source_nav {
+    grid-column: 4;
+    margin: auto;
+}
+.source_nav > button:hover {
+    color: #dbcbb8;
+}
+    
+.source_nav > button {
+    cursor: pointer;
+    color: #30220A;
+    font-weight: bold;
+    text-decoration: underline;
+    font-family: Montserrat;
+    font-size: 150%;
+
+    background-color: transparent;
+    border: none;
+}
+
+.source_drop {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    right: 0%;
+    width: 25%;
+    border-radius: 25px;
+    background-image: linear-gradient(to bottom, #755b3c, #cfad84);
+    animation: Fade linear 1s;
+}
+
+.source_drop > a {
+    color: #30220A;
+}
+.source_drop > a:hover {
+    color: white;
+}
+    
+.Introduction {
+    position: relative;
+    grid-row: 3;
+    font-size: 150%;
+    text-align: center;
+    color: #dbcbb8;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.Introduction > img {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: slider 2s;
+}
+
+.Summary {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translateY(-50%);
+}
+.Summary > h3 {
+    font-size: 200%;
+}
+.Summary > p {
+    margin: 0 0 0 25%;
+    width: 50%;
+}
+.Introduction > img {
+    position: absolute;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    filter: brightness(50%);
+}
+
+.dot {
+    cursor: pointer;
+    display: inline-block;
+    margin: 5px;
+    width: 1.5%;
+    padding-bottom: 1.5%;
+    border: none;
+    border-radius: 50%;
+    background-color: #dbcbb8;
+}
+
+#account_button {
+    cursor: pointer;
+    background-color: #285884;
+    color: #EAE7E7;
+    font-size: 125%;
+    margin: 25px;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+}
+
+.Footer {
+    grid-row: 4;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.75fr 0.25fr;
+    color: #171105;
+    font-size: 125%;
+    background-color: #B5A281;
+    padding: 5%;
+}
+.related_sources {
+    grid-column: 1;
+}
+.related_sources > a {
+    display: block;
+    line-height: 200%;
+    color: #285884;
+}
+.referenced_sources {
+    grid-column: 2;
+}
+.referenced_sources > a {
+    display: block;
+    line-height: 200%;
+    color: #285884;
+}
+.contacts {
+    grid-column: 3;
+}
+.contacts > a {
+    color: #285884;
+}

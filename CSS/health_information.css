@@ -1,0 +1,253 @@
+@keyframes Fade {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+body {
+    margin: 0px;
+    background-image: linear-gradient(to bottom, #FFDFA5, #AC905D);
+}
+
+/* Wrapper */
+.Container {
+    display: grid;
+    grid-template-rows: 0.25fr 0.1fr 5fr 1fr;
+    min-width: 100vh;
+    min-height: 100vh;
+}
+
+.Header {
+    display: grid;
+    grid-template-rows: 0.1fr 0.25fr;
+    background-color: #3d2f1f;
+}
+.Logo {
+    display: grid;
+    grid-template-columns: 0.1fr 0.2fr;
+    margin: auto;
+}
+.Logo > a {
+    font-size: 300%;
+    color: #dbcbb8;
+}
+#logo {
+    margin: auto;
+}
+#title {
+    grid-column: 2;
+}
+
+.Search {
+    grid-row: 2;
+    margin: auto;
+}
+
+#searchBar {
+    font-size: 34px;
+    border-radius: 10px 0px 0px 10px;
+}
+#searchBar::placeholder {
+    font-weight: bold;
+    font-family: Montserrat;
+    color: #5c5c5c;
+}
+#searchbutton {
+    font-size: 30px;
+    margin: 0;
+    border-radius: 0px 10px 10px 0px;
+    background-color: #999999;
+}
+
+.Navigation {
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    text-align: center;
+    font-size: 125%;
+    background-color: #876945;
+}
+.home_nav {
+    margin: auto;
+}
+.home_nav > a {
+    color: #30220A;
+}
+.home_nav > a:hover {
+    color: #dbcbb8;
+}
+
+.diet_nav {
+    grid-column: 2;
+    margin: auto;
+}
+.diet_nav > a {
+    color: #30220A;
+}
+.diet_nav > a:hover {
+    color: #dbcbb8;
+}
+    
+.logger_nav {
+    grid-column: 3;
+    margin: auto;
+}
+.logger_nav > a {
+    color: #30220A;
+}
+.logger_nav > a:hover {
+    color: #dbcbb8;
+}
+    
+.source_nav {
+    grid-column: 4;
+    margin: auto;
+}
+.source_nav > button:hover {
+    color: #dbcbb8;
+}
+    
+.source_nav > button {
+    cursor: pointer;
+    color: #30220A;
+    font-weight: bold;
+    text-decoration: underline;
+    font-family: Montserrat;
+    font-size: 150%;
+
+    background-color: transparent;
+    border: none;
+}
+
+.source_drop {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    right: 0%;
+    width: 25%;
+    border-radius: 25px;
+    background-image: linear-gradient(to bottom, #755b3c, #cfad84);
+    animation: Fade linear 1s;
+}
+
+.source_drop > a {
+    color: #30220A;
+}
+.source_drop > a:hover {
+    color: white;
+}
+
+.Information {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.Content {
+    grid-row: 3;
+    display: grid;
+    grid-template-rows: 0.5fr 2fr 2fr;
+    font-size: 125%;
+    color: #171105;
+}
+.Paragraph > h2 {
+    color: #30220A;
+}
+.Image > img {
+    max-width: 75%;
+    max-height: 75%;
+    border-radius: 15px;
+}
+.captions {
+    font-family: Montserrat;
+    color: #30220A;
+}
+
+#Info_1 {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    background-color: #e6d5b7;
+    line-height: 150%;
+    padding: 20px;
+}
+#Text_1 {
+    text-align: left;
+}
+#Image_1 {
+    grid-column: 2;
+    margin: auto 0;
+    text-align: right;
+}
+
+#Info_2 {
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    grid-row: 2;
+    background-color: #efdec1;
+    padding: 20px;
+}
+#Text_2 {
+    grid-column: 2;
+    line-height: 150%;
+    text-align: right;
+}
+#Text_3 {
+    grid-column: 1 / 3;
+    grid-row: 2;
+}
+#Image_2 {
+    margin: auto 0;
+    text-align: left;
+}
+
+#Info_3 {
+    grid-row: 3;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    background-color: #eee2ce;
+    padding: 20px;
+}
+#Image_3 {
+    margin: auto 0;
+    text-align: right;
+}
+
+.Footer {
+    grid-row: 4;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.75fr 0.25fr;
+    color: #171105;
+    font-size: 125%;
+    background-color: #B5A281;
+    padding: 5%;
+}
+.related_sources {
+    grid-column: 1;
+}
+.related_sources > a {
+    display: block;
+    line-height: 200%;
+    color: #285884;
+}
+.referenced_sources {
+    grid-column: 2;
+}
+.referenced_sources > a {
+    display: block;
+    line-height: 200%;
+    color: #285884;
+}
+.contacts {
+    grid-column: 3;
+}
+.contacts > a {
+    color: #285884;
+}
+
+table, th, td {
+    border: 3px solid #85755B;
+    border-collapse: collapse;
+    word-wrap: break-word;
+}
+#food_warning {
+    grid-column: 3;
+}
